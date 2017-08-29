@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+   
+    <title>Friends</title>
+</head>
+<body>
+    <div class="header">
+            <p request.session></p>
+            <h3>Here is your list of Friends:</h3>
+        <a class="float_right" href="/users/logout">Logout</a>
+    </div>
+    <form action="/users/success" method = "POST">
+        {% csrf_token %}
+        <div>
+        <table>
+            <th>Alias</th>
+            <th>Action</th>
+            <tr>
+            <td>{{user.name}}</td>
+            <td><a href="/user/profile">View Profile</a></td>
+            <td><a href="/user/remove">Remove as Friend</a></td>
+            </tr>
+        </table>
+    
+    </div>
+
+    </form> 
+    <div>
+        <form action="/users/remove"method= "GET">
+        <table class="other_table">
+            <th>Alias</th>
+            <th>Action</th>
+            <tr>
+                <td<a href="/users/profile">{{user.name}}</a>></td>
+                <td<a href="/users/add">Add a Friend</a>></td>
+            </tr>
+        </table>
+        </form>
+    </div>
+</body>
+</html>
